@@ -126,15 +126,6 @@ async def registrar(datos_usuario: RegistroUsuario, request: Request, bd: AsyncS
         raise HTTPException(status_code=500, detail=str(e))
     return {"mensaje": "Usuario registrado exitosamente"}
 
-@app.post("/admin/reset-database-totally-secure-key-123")
-async def reset_sistema_completo():
-    """Ruta secreta para borrar TODO el sistema y empezar de cero."""
-    try:
-        await database.borrar_todo_el_sistema()
-        return {"estado": "SISTEMA RESETEADO", "detalle": "Todos los usuarios, artículos y datos han sido eliminados. El sistema está como nuevo."}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
 @app.post("/auth/login")
 async def login(request: Request, datos_formulario: OAuth2PasswordRequestForm = Depends(), bd: AsyncSession = Depends(database.obtener_bd)):
     # Rate limit: 5 intentos de login por IP por minuto
