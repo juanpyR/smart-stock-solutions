@@ -148,7 +148,12 @@ async def login(request: Request, datos_formulario: OAuth2PasswordRequestForm = 
         )
     
     token_acceso = auth.crear_token_acceso(datos={"sub": usuario.nombre_usuario})
-    return {"token_acceso": token_acceso, "tipo_token": "bearer"}
+    return {
+        "token_acceso": token_acceso, 
+        "tipo_token": "bearer", 
+        "nombre_usuario": usuario.nombre_usuario,
+        "empresa": usuario.empresa or ""
+    }
 
 class GoogleLogin(BaseModel):
     token: str
@@ -182,7 +187,12 @@ async def google_login(data: GoogleLogin, bd: AsyncSession = Depends(database.ob
             )
             
         token_acceso = auth.crear_token_acceso(datos={"sub": usuario.nombre_usuario})
-        return {"token_acceso": token_acceso, "tipo_token": "bearer", "nombre_usuario": usuario.nombre_usuario}
+        return {
+            "token_acceso": token_acceso, 
+            "tipo_token": "bearer", 
+            "nombre_usuario": usuario.nombre_usuario,
+            "empresa": usuario.empresa or ""
+        }
         
     except ValueError:
         # Token inválido

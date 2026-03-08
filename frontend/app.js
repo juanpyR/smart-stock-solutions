@@ -29,6 +29,7 @@ window.handleCredentialResponse = async (response) => {
             const data = await res.json();
             localStorage.setItem("token", data.token_acceso);
             localStorage.setItem("nombre_usuario", data.nombre_usuario || "Usuario Google");
+            localStorage.setItem("empresa", data.empresa || "");
             showToast("Acceso con Google exitoso. Redirigiendo...", "success");
             setTimeout(() => window.location.href = "dashboard.html", 1000);
         } else {
@@ -120,7 +121,8 @@ async function realizarAcceso(nombre_usuario, contrasena) {
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem("token", data.token_acceso);
-            localStorage.setItem("nombre_usuario", nombre_usuario);
+            localStorage.setItem("nombre_usuario", data.nombre_usuario || nombre_usuario);
+            localStorage.setItem("empresa", data.empresa || "");
             showToast("Acceso concedido. Redirigiendo...", "success");
             setTimeout(() => window.location.href = "dashboard.html", 1000);
         } else {
@@ -344,6 +346,8 @@ async function inicializarPestanas() {
     });
 
     const storedUser = localStorage.getItem("nombre_usuario");
+    const storedCompany = localStorage.getItem("empresa");
+
     if (storedUser) {
         const displayName = storedUser.charAt(0).toUpperCase() + storedUser.slice(1);
         const userNameEl = document.getElementById("userNameDisplay");
@@ -352,6 +356,11 @@ async function inicializarPestanas() {
         const initials = displayName.substring(0, 2).toUpperCase();
         const avatarEl = document.getElementById("userAvatar");
         if (avatarEl) avatarEl.textContent = initials;
+    }
+
+    if (storedCompany) {
+        const companyEl = document.getElementById("userRoleDisplay");
+        if (companyEl) companyEl.textContent = storedCompany;
     }
 
     // Auto-activar la lógica de la pestaña marcada como activa al cargar (HU-GEN-01)
