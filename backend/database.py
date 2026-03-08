@@ -40,3 +40,17 @@ async def reiniciar_articulos_db():
         await conexion.execute(text("DROP TABLE IF EXISTS articulos_inventario CASCADE"))
         # Volver a crear todo segun el modelo actual
         await conexion.run_sync(Base.metadata.create_all)
+
+async def borrar_todo_el_sistema():
+    """
+    BORRADO TOTAL: Elimina TODAS las tablas (Usuarios, Artículos, Donaciones, etc.)
+    y las vuelve a crear vacías. ÚTIL PARA RESETEAR EL SISTEMA DESDE CERO.
+    """
+    async with motor.begin() as conexion:
+        # Eliminar tablas en orden para evitar errores de llaves foráneas
+        await conexion.execute(text("DROP TABLE IF EXISTS donaciones CASCADE"))
+        await conexion.execute(text("DROP TABLE IF EXISTS registros_auditoria CASCADE"))
+        await conexion.execute(text("DROP TABLE IF EXISTS articulos_inventario CASCADE"))
+        await conexion.execute(text("DROP TABLE IF EXISTS usuarios CASCADE"))
+        # Recrear esquema limpio
+        await conexion.run_sync(Base.metadata.create_all)
