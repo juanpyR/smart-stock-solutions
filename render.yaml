@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: smart-stock-solutions
+    env: docker
+    dockerContext: .
+    dockerfilePath: backend/Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smart-stock-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "*" # Cambiar por la URL real de Render después del primer deploy
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+
+databases:
+  - name: smart-stock-db
+    plan: free
+    region: oregon
