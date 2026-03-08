@@ -169,21 +169,37 @@ async def google_login(data: GoogleLogin, bd: AsyncSession = Depends(database.ob
         # Obtener información del usuario
         email = idinfo['email']
         # Usar el prefijo del email como nombre de usuario por defecto
-        username = email.split('@')[0]
+        username_default = email.split('@')[0]
         
-        # Buscar si el usuario ya existe
-        resultado = await bd.execute(select(models.Usuario).filter(models.Usuario.nombre_usuario == username))
+        # HU-AUTH: Buscar primero por EMAIL (forma más segura de identificar)
+        resultado = await bd.execute(select(models.Usuario).filter(models.Usuario.email == email))
         usuario = resultado.scalars().first()
+        
+        # Si no existe por email, buscar si existe un usuario con ese nombre (prefijo) 
+        # para vincularlos si es que no tenía el email registrado
+        if not usuario:
+            resultado = await bd.execute(select(models.Usuario).filter(models.Usuario.nombre_usuario == username_default))
+            usuario = resultado.scalars().first()
+            if usuario and not usuario.email:
+                usuario.email = email
+                await bd.commit()
         
         if not usuario:
             # Crear nuevo usuario si no existe (con password aleatoria ya que usa Google)
             import secrets
             contrasena_hasheada = auth.obtener_hash_contrasena(secrets.token_urlsafe(32))
+            
+            # Asegurar que el nombre de usuario sea único si el prefijo ya existe
+            final_username = username_default
+            check_user = await bd.execute(select(models.Usuario).filter(models.Usuario.nombre_usuario == final_username))
+            if check_user.scalars().first():
+                final_username = f"{username_default}_{secrets.token_hex(2)}"
+
             usuario = models.Usuario(
-                nombre_usuario=username,
+                nombre_usuario=final_username,
                 email=email,
                 contrasena_hash=contrasena_hasheada,
-                empresa="Empresa Google"
+                empresa="Usuario Google"
             )
             bd.add(usuario)
             await bd.commit()
