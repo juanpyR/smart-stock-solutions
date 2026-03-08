@@ -358,9 +358,9 @@ async function inicializarPestanas() {
         if (avatarEl) avatarEl.textContent = initials;
     }
 
-    if (storedCompany) {
+    if (storedCompany !== null) {
         const companyEl = document.getElementById("userRoleDisplay");
-        if (companyEl) companyEl.textContent = storedCompany;
+        if (companyEl) companyEl.textContent = storedCompany || "Pyme Registrada";
     }
 
     // Auto-activar la lógica de la pestaña marcada como activa al cargar (HU-GEN-01)
