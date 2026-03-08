@@ -28,8 +28,8 @@ window.handleCredentialResponse = async (response) => {
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem("token", data.token_acceso);
-            localStorage.setItem("nombre_usuario", data.nombre_usuario || "Usuario Google");
-            localStorage.setItem("empresa", data.empresa || "");
+            localStorage.setItem("nombre_usuario", data.nombre_usuario || "Usuario");
+            localStorage.setItem("empresa", data.empresa || "Mi Empresa");
             showToast("Acceso con Google exitoso. Redirigiendo...", "success");
             setTimeout(() => window.location.href = "dashboard.html", 1000);
         } else {
@@ -122,7 +122,7 @@ async function realizarAcceso(nombre_usuario, contrasena) {
             const data = await res.json();
             localStorage.setItem("token", data.token_acceso);
             localStorage.setItem("nombre_usuario", data.nombre_usuario || nombre_usuario);
-            localStorage.setItem("empresa", data.empresa || "");
+            localStorage.setItem("empresa", data.empresa || "Nueva Pyme");
             showToast("Acceso concedido. Redirigiendo...", "success");
             setTimeout(() => window.location.href = "dashboard.html", 1000);
         } else {
@@ -358,9 +358,9 @@ async function inicializarPestanas() {
         if (avatarEl) avatarEl.textContent = initials;
     }
 
-    if (storedCompany !== null) {
-        const companyEl = document.getElementById("userRoleDisplay");
-        if (companyEl) companyEl.textContent = storedCompany || "Pyme Registrada";
+    const companyEl = document.getElementById("userRoleDisplay");
+    if (companyEl) {
+        companyEl.textContent = storedCompany || "Mi Pyme (Actualiza datos)";
     }
 
     // Auto-activar la lógica de la pestaña marcada como activa al cargar (HU-GEN-01)
