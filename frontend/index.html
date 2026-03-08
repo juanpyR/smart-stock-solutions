@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es" class="landing-html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stock Solutions - Gestión Inteligente de Inventario</title>
+    <link rel="stylesheet" href="styles.css?v=20260305b">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body class="landing-page">
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div id="g_id_onload" data-client_id="562837690443-qnsteos8794v871eup565vust6vv5lui.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse" data-auto_prompt="false">
+    </div>
+
+    <header class="landing-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Smart Stock Solutions" class="brand-logo">
+                <span class="brand-name-header">Smart Stock <span class="brand-accent">Solutions</span></span>
+            </div>
+            <nav class="landing-nav">
+                <a href="#features">Características</a>
+                <a href="#about">Nosotros</a>
+                <button class="btn-login-nav" onclick="scrollToLogin()">Iniciar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="landing-main">
+        <div class="hero-section" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Inteligencia que rescata tu capital e <span class="gradient-text">impulsa tu
+                        Pyme</span></h1>
+                <p class="hero-subtitle">Smart Stock Solutions transforma tu historial de ventas en decisiones
+                    estratégicas. Identifica capital en riesgo y obtén recomendaciones accionables — despídete de
+                    las planillas desactualizadas.</p>
+
+                <div class="hero-features">
+                    <div class="hero-feature fade-up" style="animation-delay: 0.1s;">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Operación Sin Fricciones</h3>
+                            <p>Ahorra horas de trabajo manual con un sistema que procesa y clasifica la información
+                                compleja por ti.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hero-feature fade-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Decisiones con Datos</h3>
+                            <p>Deja de adivinar. Transforma tu historial de ventas y stock en estrategias comerciales
+                                precisas y rentables.</p>
+                        </div>
+                    </div>
+                    <div class="hero-feature fade-up" style="animation-delay: 0.3s;">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Protección de Capital</h3>
+                            <p>Detecta de forma temprana las fugas de dinero ocultas en tu bodega y resguarda tu flujo
+                                de caja.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-container-wrapper" id="login-section">
+                <div class="glass-card login-card-professional">
+                    <div class="card-header">
+                        <h2>Bienvenido de nuevo</h2>
+                        <p>Accede a tu panel de control</p>
+                    </div>
+
+                    <div class="google-login-wrapper">
+                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                            data-text="signin_with" data-size="large" data-logo_alignment="left">
+                        </div>
+                    </div>
+
+                    <div class="divider">
+                        <span>O CONTINÚA CON EMAIL</span>
+                    </div>
+
+                    <form id="loginForm" class="professional-form">
+                        <div class="form-group">
+                            <label for="nombre-usuario">Correo electrónico o Usuario</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </span>
+                                <input type="text" id="nombre-usuario" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="label-row">
+                                <label for="contrasena">Contraseña</label>
+                                <a href="#" class="forgot-pass">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </span>
+                                <input type="password" id="contrasena" required placeholder="••••••••">
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <span>Mantener sesión iniciada</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary-gradient">
+                            <span class="btn-text">Iniciar Sesión</span>
+                        </button>
+                    </form>
+
+                    <div class="auth-switch">
+                        ¿No tienes cuenta? <a href="register.html">Regístrate ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Características Section -->
+        <section id="features" class="landing-section features-section">
+            <div class="section-container">
+                <h2 class="section-title">Nuestras <span class="gradient-text">Características</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-up">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 20v-6M6 20V10M18 20V4" />
+                            </svg>
+                        </div>
+                        <h3>Asistente de Planificación Inteligente</h3>
+                        <p>Estrategias accionables generadas automáticamente para liquidar sobrestock o anticiparse a
+                            quiebres, con explicaciones paso a paso.</p>
+                    </div>
+                    <div class="feature-card fade-up" style="animation-delay: 0.1s;">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M3 9h18M9 21V9" />
+                            </svg>
+                        </div>
+                        <h3>Clasificación Visual de Riesgo</h3>
+                        <p>Segmentación automática del inventario en tarjetas dinámicas (Vencido, Crítico, Preventivo)
+                            para enfocar tu atención en lo más urgente.</p>
+                    </div>
+                    <div class="feature-card fade-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3>Métricas e Impacto Financiero</h3>
+                        <p>Visibilidad en tiempo real del capital exacto inmovilizado o en riesgo, con herramientas
+                            intuitivas para descargar y cruzar datos clave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nosotros Section -->
+        <section id="about" class="landing-section about-section">
+            <div class="section-container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+                <div class="about-content fade-up"
+                    style="padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(10px);">
+                    <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">Sobre <span
+                            class="gradient-text">Smart Stock Solutions</span></h2>
+                    <p
+                        style="text-align: center; color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+                        Nacimos para cerrar la brecha tecnológica en las Pymes. Convertimos la complejidad del control
+                        de stock en un ecosistema de decisiones claras y rentables, centralizando toda tu gestión
+                        operativa en un solo lugar.
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                        <!-- Tarjeta 1: Visibilidad -->
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, background 0.2s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)';">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 8px; background: rgba(96, 165, 250, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 600;">1.
+                                Misión Democratizadora</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin:0;">
+                                Queremos que cualquier Pyme pueda tomar decisiones financieras de gran empresa con la
+                                agilidad de un emprendedor, sin requerir expertos en datos.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 2: Diseño Centrado en Ti -->
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, background 0.2s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)';">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 8px; background: rgba(167, 139, 250, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 600;">2.
+                                Diseño Centrado en Ti</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin:0;">
+                                Sabemos que tu tiempo es valioso. Construimos herramientas amigables e intuitivas que no
+                                requieren de manuales complejos ni curvas de aprendizaje frustrantes.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 3: Compromiso Ambiental -->
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, background 0.2s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)';">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 8px; background: rgba(52, 211, 153, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                    </path>
+                                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                                </svg>
+                            </div>
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 600;">3.
+                                Compromiso Sostenible</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin:0;">
+                                Creemos que el inventario no vendido no debe terminar en la basura. Facilitamos y
+                                visibilizamos el impacto de las donaciones por sobre la merma.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 4: Evolución Continua -->
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, background 0.2s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)';">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 8px; background: rgba(251, 191, 36, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 600;">4.
+                                Desarrollo Continuo</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin:0;">
+                                No somos solo un software; somos tu aliado estratégico. Crecemos junto a ti,
+                                integrando feedback real para adaptarnos a los desafíos de tu rubro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Separador horizontal sutil -->
+                    <div style="display: flex; align-items: center; margin: 0 0 2rem 0;">
+                        <div
+                            style="flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);">
+                        </div>
+                    </div>
+
+                    <p
+                        style="text-align: center; color: #e2e8f0; font-size: 1.15rem; font-weight: 500; opacity: 0.9; margin: 0;">
+                        Nuestra misión es derribar de una vez las barreras analíticas, permitiéndote tomar <br
+                            style="display: none;" class="desktop-br" />
+                        <span style="color: #60a5fa; font-weight: 700;">decisiones financieras de gran empresa</span>
+                        con la agilidad de un emprendedor.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="landing-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="footer-brand">Smart Stock Solutions</span> &bull;
+                    Todos los derechos reservados.</p>
+                <div class="footer-links-minimal">
+                    <span>Hecho con inteligencia real</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js?v=20260227180200"></script>
+    <script>
+        function scrollToLogin() {
+            document.getElementById('login-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Custom smooth wheel scroll implementation to bypass CSS overflow lock conflicts
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLanding = document.body.classList.contains('landing-page');
+            if (!isLanding) return;
+
+            // Simple robust scroll hijacking
+            let isScrolling = false;
+
+            window.addEventListener('wheel', (e) => {
+                e.preventDefault();
+
+                if (isScrolling) return;
+
+                // Determine direction
+                const direction = e.deltaY > 0 ? 1 : -1;
+
+                // Calculate amount (using consistent viewport height ratio for smooth large jumps)
+                const amount = window.innerHeight * 0.6;
+
+                window.scrollBy({
+                    top: direction * amount,
+                    behavior: 'smooth'
+                });
+
+                // Debounce wheel events slightly to let smooth scroll finish
+                isScrolling = true;
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 400); // Wait 400ms before accepting next scroll input
+
+            }, { passive: false });
+        });
+    </script>
+</body>
+
+</html>

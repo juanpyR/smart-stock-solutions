@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stock Solutions - Crear Cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body {
+            overflow: visible !important;
+            height: auto !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="landing-page">
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header class="landing-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Smart Stock Solutions" class="brand-logo">
+                <span class="brand-name-header">Smart Stock <span class="brand-accent">Solutions</span></span>
+            </div>
+            <nav class="landing-nav">
+                <a href="index.html">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="landing-main">
+        <div class="auth-section">
+            <div class="login-container-wrapper">
+                <div class="glass-card login-card-professional">
+                    <div class="card-header">
+                        <h2>Crear Cuenta</h2>
+                        <p>Únete a la gestión inteligente de inventario</p>
+                    </div>
+
+                    <form id="registerPageForm" class="professional-form">
+                        <div class="form-group">
+                            <label for="reg-nombre-usuario">Nombre de Usuario *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </span>
+                                <input type="text" id="reg-nombre-usuario" required placeholder="Elige un usuario">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-email">Correo Electrónico *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </span>
+                                <input type="email" id="reg-email" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-contrasena">Contraseña *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </span>
+                                <input type="password" id="reg-contrasena" required placeholder="••••••••">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-company">Empresa</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                        <path d="M9 22v-4h6v4"></path>
+                                        <path d="M8 6h.01"></path>
+                                        <path d="M16 6h.01"></path>
+                                        <path d="M12 6h.01"></path>
+                                        <path d="M12 10h.01"></path>
+                                        <path d="M12 14h.01"></path>
+                                        <path d="M16 10h.01"></path>
+                                        <path d="M16 14h.01"></path>
+                                        <path d="M8 10h.01"></path>
+                                        <path d="M8 14h.01"></path>
+                                    </svg>
+                                </span>
+                                <input type="text" id="reg-company" placeholder="Nombre de tu empresa">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-phone">Teléfono de contacto</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <input type="tel" id="reg-phone" placeholder="+56 9 1234 5678">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary-gradient">
+                            <span class="btn-text">Registrarse ahora</span>
+                        </button>
+                    </form>
+
+                    <div class="auth-switch">
+                        ¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2026 Smart Stock Solutions. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js?v=20260227181600"></script>
+</body>
+
+</html>

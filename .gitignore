@@ -1,0 +1,24 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Datos y Logs
+data/
+*.log
+*.parquet
+*.csv
+
+# Artefactos de OS
+.DS_Store
+Thumbs.db
+
+# Bases de datos y módulos
+*.db
+*.sqlite3
+node_modules/
