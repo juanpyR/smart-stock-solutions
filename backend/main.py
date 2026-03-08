@@ -177,28 +177,17 @@ async def google_login(data: GoogleLogin, bd: AsyncSession = Depends(database.ob
 
         # Obtener información del usuario
         email = idinfo['email']
-        # Usar el prefijo del email como nombre de usuario por defecto
-        username_default = email.split('@')[0]
-        
-        # HU-AUTH (RESTRICTED): Buscar primero por EMAIL (forma más segura de identificar)
+        # HU-AUTH (STRICT): BUSCAR ÚNICAMENTE POR EMAIL
+        # Ahora no se permiten combinaciones ni adivinanzas por nombre. 
+        # El email debe estar registrado previamente en la base de datos de forma manual.
         resultado = await bd.execute(select(models.Usuario).filter(models.Usuario.email == email))
         usuario = resultado.scalars().first()
         
-        # Si no existe por email, buscar si existe un usuario con ese nombre (prefijo) 
-        # para vincularlos si es que no tenía el email registrado aún
-        if not usuario:
-            resultado = await bd.execute(select(models.Usuario).filter(models.Usuario.nombre_usuario == username_default))
-            usuario = resultado.scalars().first()
-            if usuario:
-                # Actualizar email del usuario existente para futuras entradas
-                usuario.email = email
-                await bd.commit()
-        
-        # MODO CERRADO: Si el usuario no existe en la BD, no le permitimos entrar ni crear cuenta.
+        # MODO ULTRA-CERRADO: Si el email no está en la BD, se bloquea el acceso.
         if not usuario:
             raise HTTPException(
                 status_code=403, 
-                detail="Acceso Denegado: Tu cuenta de Google no está vinculada a ningún usuario registrado. Regístrate primero manualmente o contacta al administrador."
+                detail=f"Acceso Denegado: El correo '{email}' no está autorizado en este sistema. Por favor, regístrate manualmente con este correo primero."
             )
             
         token_acceso = auth.crear_token_acceso(datos={"sub": usuario.nombre_usuario})
