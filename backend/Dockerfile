@@ -16,8 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Expose the API port
+# Expose the port (Render will override this, but good to have)
 EXPOSE 8000
 
-# Start FastAPI
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Ensure data directory exists
+RUN mkdir -p data
+
+# Start FastAPI with shell form to support $PORT
+CMD uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000}
